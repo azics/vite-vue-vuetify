@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import DataTable from '../views/DataTable.vue'
 import ExportFile from '../views/ExportFile.vue'
-import ExportFile from '../components/HelloWorld.vue'
+import HelloWorld from '../components/HelloWorld.vue'
 
 const routes = [
   { path: '/', component: HelloWorld },
