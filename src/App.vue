@@ -1,12 +1,17 @@
 <template>
   <v-app>
-    <v-app-bar app>
-      <v-container>
-        <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-        <v-app-title>vite-vue-vuetify</v-app-title>
-      </v-container>
+    <v-app-bar
+      color="green"
+      class="flex-grow-0"
+      app
+      dark
+    >
+      <v-app-bar-nav-icon
+        variant="text"
+        @click.stop="drawer = !drawer"
+      ></v-app-bar-nav-icon>
+      <v-app-bar-title>Vite+Vue+Vuetify</v-app-bar-title>
     </v-app-bar>
-
     <v-navigation-drawer
       v-model="drawer"
       app

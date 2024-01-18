@@ -9,12 +9,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@mdi/font": "^7.4.47",
     "axios": "^1.6.5",
     "vue": "^3.3.11",
-    "vuetify": "^3.4.0-beta.1"
+    "vue-router": "^4.2.5",
+    "vuetify": "^3.4.10",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^4.5.2",
+    "@vitejs/plugin-vue": "^4.6.2",
     "vite": "^5.0.8"
   }
 }
