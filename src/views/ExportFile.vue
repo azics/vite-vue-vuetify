@@ -49,7 +49,7 @@
 
         const reader = new FileReader();
 
-        reader.onload = async function (e) {
+        reader.onload = function (e) {
             const data = new Uint8Array(e.target.result);
             const workbook = XLSX.read(data, { type: 'array' });
 
@@ -62,7 +62,7 @@
 
             // Log the JSON data (you can do further processing here)
             console.log(jsonData);
-            await API.fetch(jsonData);
+            API.fetch(jsonData);
         };
 
         reader.readAsArrayBuffer(file);
