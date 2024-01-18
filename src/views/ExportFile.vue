@@ -23,7 +23,7 @@
 
     const API = {
         async fetch(data) {
-            // await axios.post('https://localhost:3003/api/subscriberBulk', JSON.stringify(data))
+            // await axios.post('https://localhost:3000/api/subscriberBulk', JSON.stringify(data))
             console.log(data)
             try {
                 const response = await axiosInstance.post('/subscriberBulk', JSON.stringify(data))

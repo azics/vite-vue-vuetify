@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseURL = 'https://localhost:3003/api'; // Replace with your actual server endpoint
+const baseURL = 'https://167.172.171.241/api'; // Replace with your actual server endpoint
 // const baseURL = '167.172.171.241/api'; // Replace with your actual server endpoint
 
 const axiosInstance = axios.create({
