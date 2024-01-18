@@ -30,21 +30,21 @@
 
     const desserts = [
         {
-            id: 1,
+            // id: 1,
             region: 'TASHKENT',
             item: 175,
             units: 24,
             subscribers: 4,
         },
         {
-            id: 2,
+            // id: 2,
             region: 'TASHKENT',
             item: 175,
             units: 24,
             subscribers: 4,
         },
         {
-            id: 3,
+            // id: 3,
             region: 'TASHKENT',
             item: 175,
             units: 24,
@@ -88,7 +88,7 @@
                 //     sortable: false,
                 //     key: 'id',
                 // },
-                { title: 'REGION', key: 'region', align: 'end' },
+                { title: 'REGION', key: 'region', align: 'start' },
                 { title: 'ITEM', key: 'item', align: 'end' },
                 { title: 'UNITS', key: 'units', align: 'end' },
                 { title: 'SUBSCRIBERS', key: 'subscribers', align: 'end' },
