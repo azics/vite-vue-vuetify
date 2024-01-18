@@ -1,27 +1,29 @@
 <template>
-    <v-card>
-        <v-card-actions>
-            <!-- <v-switch
-                v-model="group"
-                hide-details
-                true-value="yes"
-                false-value="no"
-                :label="`GroupBY: ${group}`"
-            ></v-switch> -->
-            Grouped by Region
-        </v-card-actions>
-        <v-card-text>
-            <v-data-table-server
-                v-model:items-per-page="itemsPerPage"
-                :headers="headers"
-                :items-length="totalItems"
-                :items="serverItems"
-                :loading="loading"
-                item-value="name"
-                @update:options="loadItems"
-            ></v-data-table-server>
-        </v-card-text>
-    </v-card>
+    <v-container>
+        <v-card>
+            <v-card-actions>
+                <!-- <v-switch
+                    v-model="group"
+                    hide-details
+                    true-value="yes"
+                    false-value="no"
+                    :label="`GroupBY: ${group}`"
+                ></v-switch> -->
+                Grouped by Region
+            </v-card-actions>
+            <v-card-text>
+                <v-data-table-server
+                    v-model:items-per-page="itemsPerPage"
+                    :headers="headers"
+                    :items-length="totalItems"
+                    :items="serverItems"
+                    :loading="loading"
+                    item-value="name"
+                    @update:options="loadItems"
+                ></v-data-table-server>
+            </v-card-text>
+        </v-card>
+    </v-container>
 </template>
 <script>
     import axiosInstance from '../api.js';

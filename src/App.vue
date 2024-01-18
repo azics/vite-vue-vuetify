@@ -42,6 +42,7 @@
       return {
         drawer: false,
         items: [
+          { title: 'Intro', to: '/' },
           { title: 'Export File', to: '/export' },
           { title: 'Data Table', to: '/datatable' }
         ]
