@@ -55,7 +55,7 @@
     const API = {
         async fetch({ page, itemsPerPage, sortBy }) {
             // await axios.get('https://localhost:3003/api/subscribersGrouped')
-            // await axiosInstance.get('https://localhost:3003/api/subscribersGrouped')
+            // await axiosInstance.get('/subscribersGrouped')
 
             const start = (page - 1) * itemsPerPage
             const end = start + itemsPerPage

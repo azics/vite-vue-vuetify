@@ -22,27 +22,17 @@
     import axios from 'axios';
 
     const API = {
-        async fetch({ page, itemsPerPage, sortBy }) {
-            // await axios.get('https://localhost:3003/api/subscribersGrouped')
-            // await axiosInstance.get('https://localhost:3003/api/subscribersGrouped')
-
-            const start = (page - 1) * itemsPerPage
-            const end = start + itemsPerPage
-            // const items = desserts.slice()
-
-            if (sortBy.length) {
-                const sortKey = sortBy[0].key
-                const sortOrder = sortBy[0].order
-                items.sort((a, b) => {
-                    const aValue = a[sortKey]
-                    const bValue = b[sortKey]
-                    return sortOrder === 'desc' ? bValue - aValue : aValue - bValue
-                })
+        async fetch(data) {
+            // await axios.post('https://localhost:3003/api/subscriberBulk', JSON.stringify(data))
+            console.log(data)
+            try {
+                const response = await axiosInstance.post('/subscriberBulk', JSON.stringify(data))
+            } catch (error) {
+                throw error
             }
 
-            const paginated = items.slice(start, end)
 
-            return { items: paginated, total: items.length }
+            // return response
         },
     }
 
@@ -59,7 +49,7 @@
 
         const reader = new FileReader();
 
-        const data = reader.onload = function (e) {
+        reader.onload = async function (e) {
             const data = new Uint8Array(e.target.result);
             const workbook = XLSX.read(data, { type: 'array' });
 
@@ -71,10 +61,10 @@
             const jsonData = XLSX.utils.sheet_to_json(sheet);
 
             // Log the JSON data (you can do further processing here)
-            return jsonData;
+            console.log(jsonData);
+            await API.fetch(jsonData);
         };
 
-        console.log(data);
         reader.readAsArrayBuffer(file);
 
     }
@@ -102,13 +92,9 @@
             async sendItems({ page, itemsPerPage, sortBy }) {
                 this.loading = true
 
-                convertExcelToJson()
+                await convertExcelToJson()
 
-                API.fetch({ page, itemsPerPage, sortBy }).then(({ items, total }) => {
-                    this.serverItems = items
-                    this.totalItems = total
-                    this.loading = false
-                })
+                this.loading = true
             },
         },
     }
